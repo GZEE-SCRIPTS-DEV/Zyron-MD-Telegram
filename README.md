@@ -104,26 +104,6 @@ Se tudo estiver configurado corretamente, o bot ficará online e poderá receber
 
 ---
 
-🛠️ PERSONALIZAÇÃO
-
-O projeto pode ser personalizado de acordo com suas necessidades.
-
-Você pode modificar:
-
-- 🤖 Nome do bot
-- 🧠 Sistema de IA
-- ⚡ Prefixo dos comandos
-- 🎨 Menus
-- 🛡️ Sistemas de administração
-- 📥 Sistemas de download
-- ⚙️ Comandos
-- 🗄️ Banco de dados
-- 🔌 Integrações com APIs
-
-Use a estrutura do projeto como base para criar sua própria versão do Zyron-MD Telegram.
-
----
-
 ⚠️ AVISO
 
 Este projeto é destinado para estudos, aprendizado e automação de bots no Telegram.
