@@ -1,0 +1,61 @@
+🎉 Oláaa, ganhador! Seja muito bem-vindo! 🚀
+
+📚 Tutorial: Como criar seu próprio bot no Telegram 🤖
+
+Neste tutorial você vai aprender a criar um bot do zero, configurar comandos e deixar ele funcionando no Telegram.
+
+1️⃣ Criando o bot no Telegram
+
+1. Abra o Telegram e procure por BotFather.
+2. Envie o comando:
+
+/start
+
+3. Depois envie:
+
+/newbot
+
+4. Escolha um nome para o seu bot.
+5. Escolha um usuário para ele (precisa terminar com bot).
+6. O BotFather irá enviar um TOKEN. Guarde esse código, pois ele será usado para conectar seu bot.
+
+2️⃣ Preparando o ambiente
+
+Você vai precisar de:
+
+- 📱 Um celular ou PC
+- 🟢 Node.js instalado
+- 📂 Uma pasta para o projeto
+
+Crie a pasta do bot e abra o terminal nela com o comando:
+cd /storage/emulated/0/Zyron-MD-telegram/Zyron-MD-bot
+(deixe sempre os arquivos no armazenamento interno, ou no Storage directory.)
+
+3️⃣ Instalando as dependências
+
+Execute:
+
+npm init -y
+
+Depois instale a biblioteca do Telegram:
+
+npm install node-telegram-bot-api
+
+4️⃣ Adicionando seu Token 
+
+Com o Token na mão, você vai procurar a pasta "index.js"
+e trocar o "TOKEN_BOT" para o seu Token que pegou no BotFather
+normalmente assim: XXXXXXXX:AAXXXXXXXXXXXX
+
+5️⃣ Iniciando o bot
+
+No terminal, execute:
+
+node index.js
+
+Se aparecer sem erros, seu bot já estará online! ✅
+
+Agora você pode começar a adicionar comandos, menus, botões e sistemas personalizados. 🔥
+
+Desenvolvido por GzeeScriptsDev</>
+Todos os direitos reservados Gzee Studio Crew © & Zyron-MD Productions © 2026

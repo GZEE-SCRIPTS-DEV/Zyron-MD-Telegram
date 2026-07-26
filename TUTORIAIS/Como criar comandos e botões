@@ -1,0 +1,170 @@
+🚀 Tutorial 2: Criando comandos, botões e menu no Telegram 🤖
+
+Agora que seu bot já está funcionando, vamos adicionar comandos, botões e um menu para deixar ele mais profissional.
+
+1️⃣ Criando comandos personalizados
+
+Abra o arquivo "command.js" e adicione novos comandos:
+
+bot.onText(/\/ping/, (msg) => {
+    bot.sendMessage(
+        msg.chat.id,
+        '🏓 Pong! Bot online com sucesso!'
+    );
+});
+
+
+bot.onText(/\/info/, (msg) => {
+    bot.sendMessage(
+        msg.chat.id,
+        `🤖 *Informações do Bot*
+
+👤 Usuário: ${msg.from.first_name}
+🆔 ID: ${msg.from.id}
+
+⚡ Sistema funcionando!`,
+        {
+            parse_mode: 'Markdown'
+        }
+    );
+});
+
+Agora, quando alguém enviar:
+
+/ping
+
+O bot responderá:
+
+🏓 Pong! Bot online com sucesso!
+
+---
+
+2️⃣ Criando botões no Telegram
+
+Vamos criar um menu com botões:
+no arquivo "callbacks.js" adicione:
+
+
+bot.onText(/\/menu/, (msg) => {
+
+    const options = {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {
+                        text: '🏓 Ping',
+                        callback_data: 'ping'
+                    }
+                ],
+                [
+                    {
+                        text: 'ℹ️ Sobre',
+                        callback_data: 'sobre'
+                    }
+                ]
+            ]
+        }
+    };
+
+    bot.sendMessage(
+        msg.chat.id,
+        '📌 *Menu Principal*',
+        {
+            ...options,
+            parse_mode: 'Markdown'
+        }
+    );
+});
+
+Agora ao usar:
+
+/menu
+
+Aparecerá um menu com botões.
+
+---
+
+3️⃣ Respondendo aos botões
+
+Adicione:
+
+bot.on('callback_query', (query) => {
+
+    const chatId = query.message.chat.id;
+
+    if(query.data === 'ping') {
+
+        bot.sendMessage(
+            chatId,
+            '🏓 Pong! Tudo certo!'
+        );
+
+    }
+
+    else if(query.data === 'sobre') {
+
+        bot.sendMessage(
+            chatId,
+            '🤖 Sou um bot criado por Gzee Scripts Dev!'
+        );
+
+    }
+
+});
+
+Agora os botões terão funções.
+
+---
+
+4️⃣ Criando menu de comandos do Telegram
+
+Você pode colocar comandos no menu do Telegram:
+
+bot.setMyCommands([
+    {
+        command: 'start',
+        description: 'Iniciar bot'
+    },
+    {
+        command: 'menu',
+        description: 'Abrir menu'
+    },
+    {
+        command: 'ping',
+        description: 'Testar bot'
+    },
+    {
+        command: 'info',
+        description: 'Informações'
+    }
+]);
+
+O Telegram mostrará esses comandos automaticamente.
+
+---
+
+5️⃣ Estrutura recomendada do projeto
+
+MeuBot/
+│
+├── index.js
+├── package.json
+│
+├── commands.js/
+│   ├── ping.js
+│   └── info.js
+│
+└── callbacks.js/
+    └── comandos botões 
+
+Assim seu bot fica organizado e fácil de atualizar.
+
+✅ Pronto! Seu bot agora tem:
+
+✔️ Comandos personalizados
+✔️ Botões interativos
+✔️ Menu de comandos
+✔️ Estrutura profissional
+
+Desenvolvido por GzeeScriptsDev</>
+Todos os direitos reservados Gzee Studio Crew © & Zyron-MD Productions © 2026
